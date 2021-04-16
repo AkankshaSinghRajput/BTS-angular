@@ -6,7 +6,6 @@ import { Bug } from './Bug';
   providedIn: 'root'
 })
 export class BugService {
-
   constructor(private http: HttpClient) { }
   save(bug: Bug) {
     return this.http.post('http://localhost:8080/bug',bug, {
