@@ -8,17 +8,16 @@ import { BugService } from '../bug.service';
   styleUrls: ['./create-bug.component.css']
 })
 export class CreateBugComponent implements OnInit {
-  title:string = 'createBug';
+  title:string = 'Create Bug';
   bug:Bug=new Bug(); //model -stores all form data
-
+  bugArray:Bug[]=[];
   constructor(private bugService:BugService) { }
-  save(){
-
-    const promise = this.bugService.save(this.bug);
+  saveBug(){
+    const promise = this.bugService.saveBug(this.bug);
     promise.subscribe(response=> {
       console.log(response);
-      alert('user added..')
-      //this.userArray.push(Object.assign({}, this.user));
+      alert('bug added..')
+      //this.bugArray.push(Object.assign({}, this.user));
     },
     error=> {
       console.log(error);
