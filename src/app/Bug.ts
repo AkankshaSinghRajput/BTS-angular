@@ -2,6 +2,7 @@ import { PRIORITY } from './PRIORITY';
 import { TYPE } from './TYPE';
 import { STATUS } from './STATUS';
 import { SEVERITY } from './SEVERITY';
+import { formatDate } from '@angular/common';
 export class Bug{
   name:string='';
   projectId:string='';
@@ -9,7 +10,7 @@ export class Bug{
   product:string='';
   synopsis:string='';
   description:string='';
-  eta:Date=new Date();
+  eta:Date= new Date();
   id:string='';
   priority:PRIORITY=PRIORITY.LOW;
   type:TYPE=TYPE.COMPILETIME;
