@@ -7,27 +7,26 @@ import { BugService } from '../bug.service';
   styleUrls: ['./get-bug.component.css']
 })
 export class GetBugComponent implements OnInit {
-  title:string = 'getBug';
+  title:string = 'Get Bug';
   bug:Bug=new Bug(); //model -stores all form data
-  bugArray: any;
+  bugArray:any;
   constructor(private bugService:BugService) { }
-
   getBug(name:any)
-{
-this.bugService.getBug(name).subscribe(response=>
   {
-    this.bugArray=[response];
-    console.log(response);
-    alert('Displaying Bugs');
+  this.bugService.getBug(name).subscribe(response=>
+    {
+      this.bugArray=[response];
+      console.log(response);
+      alert('bug shown....');
 
-  },
-  error=>{
-    console.log(error);
-    alert('error happened....');
+    },
+    error=>{
+      console.log(error);
+      alert('error happened....');
 
+    }
+    )
   }
-  )
-}
 getBugbyStatus(status:any)
 {
 this.bugService.getBugbyStatus(status).subscribe(response=>
