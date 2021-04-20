@@ -1,32 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-}
 
-.header {
-  height: 10vh;
-}
-
-.navbar-style {
-  background-color: grey;
-  height: auto;
-  width: auto;
-  box-shadow: 0 5px 10px black;
-  text-transform: uppercase;
-}
-
-li a {
-  color: #000;
-}
-
-.logo {
-  height: 48px;
-  padding: 2px 10px;
-}
-
-.icon-bar {
-  background: darkorange;
-}
 
 .table {
   border: white;
@@ -50,8 +22,8 @@ li a {
   border-radius: 25px;
   border: 2px solid black;
   padding: 20px;
-  width: 400px;
-  height: 180px;
+  width: 900px;
+  height: auto;
 }
 
 .table table-bordered {
@@ -82,4 +54,42 @@ li a {
   font-size: 30px;
   color: darkorange;
   font-family: Arial, Helvetica, sans-serif;
+}
+.button
+{
+
+  border-radius: 10px;
+  background-color: darkorange;
+  color: black;
+  margin-left: 20px;
+  width: auto;
+  padding: 8px;
+}
+button:hover {
+background-color: #09e639;
+}
+
+#background
+{
+  background-color: cornsilk;
+  width: auto;
+  height: auto;
+}
+.para1
+{
+  font-size: 30px;
+
+  color : darkorange;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#bugName,#Status{
+  margin-left: 20px;
+}
+.table table-bordered{
+  border:1px solid black;
+}
+.table td{
+  border:1px solid black;
 }

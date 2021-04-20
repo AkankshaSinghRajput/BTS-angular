@@ -7,6 +7,15 @@ import { HeaderComponent } from './header/header.component';
 import { CreateBugComponent } from './create-bug/create-bug.component';
 import { GetBugComponent } from './get-bug/get-bug.component';
 import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+import { RouterModule, Routes } from '@angular/router';
+import { UpdateBugComponent } from './update-bug/update-bug.component';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent }, //default, Home page
+  { path: 'create', component: CreateBugComponent },
+  { path: 'get', component: GetBugComponent },
+];
 
 @NgModule({
   declarations: [
@@ -14,10 +23,15 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     CreateBugComponent,
     GetBugComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent,
+    UpdateBugComponent,
   ],
-  imports: [
-    BrowserModule, FormsModule, HttpClientModule,
+  imports: [RouterModule.forRoot(
+    appRoutes,
+    { enableTracing: true } // <-- debugging purposes only
+  ),
+    BrowserModule, FormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
