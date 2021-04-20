@@ -40,12 +40,16 @@ getBug(name:any)
 }
 getBugbyStatus(status:any)
 {
-this.bugService.getBugbyStatus(status).subscribe(response=>
-  {
-    this.bugArray=response;
-    console.log(response);
-    alert('bug found....');
-
+  const bugstatus =status;
+  const promise = this.bugService.getBugbyStatus(status);
+  promise.subscribe(response => {
+    this.bugResult = response;
+    if (this.bugResult!=0) {
+      this.bugArray = this.bugResult;
+    }
+    else {
+      alert("No bug with " + status + " found");
+    }
   },
   error=>{
     console.log(error);
