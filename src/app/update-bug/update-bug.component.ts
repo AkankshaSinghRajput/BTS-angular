@@ -9,15 +9,14 @@ import { BugService } from '../bug.service';
 export class UpdateBugComponent implements OnInit {
   title: string = 'Create Bug';
   bug: Bug = new Bug(); //model -stores all form data
-  bugId: any;
+  id: string='';
   constructor(private bugService: BugService) { }
 
-  // updateBug(id:any){
-  //   const bugId = id;
-  //   const promise = this.bugService.updateBug(this.bug);
+  // updateBug(id: string){
+  //   const promise = this.bugService.updateBug(this.id);
   //   promise.subscribe(response=> {
   //     console.log(response);
-  //     alert('bug added..')
+  //     alert('bug Updated')
   //     //this.bugArray.push(Object.assign({}, this.user));
   //   },
   //   error=> {
