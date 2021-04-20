@@ -12,20 +12,20 @@ export class UpdateBugComponent implements OnInit {
   bugId: any;
   constructor(private bugService: BugService) { }
 
-  updateBug(id:any){
-    const bugId = id;
-    const promise = this.bugService.updateBug(this.bug);
-    promise.subscribe(response=> {
-      console.log(response);
-      alert('bug added..')
-      //this.bugArray.push(Object.assign({}, this.user));
-    },
-    error=> {
-      console.log(error);
-      alert('error happenned..')
-    })
-    // this.user.firstname = 'John';
-  }
+  // updateBug(id:any){
+  //   const bugId = id;
+  //   const promise = this.bugService.updateBug(this.bug);
+  //   promise.subscribe(response=> {
+  //     console.log(response);
+  //     alert('bug added..')
+  //     //this.bugArray.push(Object.assign({}, this.user));
+  //   },
+  //   error=> {
+  //     console.log(error);
+  //     alert('error happenned..')
+  //   })
+  //   // this.user.firstname = 'John';
+  // }
 
   ngOnInit(): void {
   }

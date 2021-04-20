@@ -14,12 +14,13 @@ export class BugService {
     });
   }
 
-  updateBug(bugId: any, bug: Bug) {
-    return this.http.put(URL+ bugId,{
-      headers: { "content-type": 'application/json',
-      reponseType: 'text' }
-    } );
-  }
+  // updateBug(bugId: any, bug: Bug) {
+  //   return this.http.put(URL+ bugId
+  //     ,{
+  //     headers: { "content-type": 'application/json',
+  //     reponseType: 'text' }
+  //   } );
+  // }
 
   getBugs(){
     return this.http.get(URL);
