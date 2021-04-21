@@ -13,6 +13,11 @@ export class GetBugComponent implements OnInit {
   bugResult: any;
 
   constructor(private bugService:BugService) { }
+
+  reloadPage() {
+    window.location.reload();
+ }
+
 getBug(name:any)
 {
   const bugName =name;
