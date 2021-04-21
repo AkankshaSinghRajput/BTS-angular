@@ -6,7 +6,7 @@ import { BugService } from '../bug.service';
   templateUrl: './get-bug.component.html',
   styleUrls: ['./get-bug.component.css']
 })
-export class GetBugComponent implements OnInit {
+export class GetBugComponent implements OnInit { //controller
   title:string = 'Get Bug';
   bug:Bug=new Bug(); //model -stores all form data
   bugArray:any;
@@ -14,10 +14,13 @@ export class GetBugComponent implements OnInit {
 
   constructor(private bugService:BugService) { }
 
+  //for refreshing the page create a function
   reloadPage() {
     window.location.reload();
  }
 
+ //to search the bug by name from service class
+ //validation for wrong entry
 getBug(name:any)
 {
   const bugName =name;

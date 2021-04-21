@@ -6,11 +6,14 @@ import { BugService } from '../bug.service';
   templateUrl: './update-bug.component.html',
   styleUrls: ['./update-bug.component.css']
 })
-export class UpdateBugComponent implements OnInit {
+export class UpdateBugComponent implements OnInit { //controller
   title:string = 'Create Bug';
   bug:Bug=new Bug(); //model -stores all form data
   bugArray:Bug[]=[];
   constructor(private bugService:BugService) { }
+
+  //update the data in database with service class
+  //validation
   updateBug()
   {const promise = this.bugService.update(this.bug,this.bug.id);
     promise.subscribe(response=> {

@@ -8,12 +8,14 @@ const URL='http://localhost:8081/bug/'
 })
 export class BugService {
   constructor(private http: HttpClient) { }
+
+   //service for create bug
   saveBug(bug: Bug) {
     return this.http.post(URL,bug, {
       headers: { "content-type": 'application/json' }
     });
   }
-
+   //service for update bug
   update(bug: Bug, id: string) {
     return this.http.put(URL+id, bug, {
       headers: { "content-type": 'application/json' }
@@ -21,9 +23,12 @@ export class BugService {
     });
   }
 
+   //service for get all bugs
   getBugs(){
     return this.http.get(URL);
   }
+
+   //service for get bug by name
   getBug(name:any){
     return this.http.get(URL+'name/'+ name, {
       headers: {
@@ -32,6 +37,8 @@ export class BugService {
       }
       });
   }
+
+  //service for get bug by status
     getBugbyStatus(status:any){
       return this.http.get(URL+'status/'+ status, {
         headers: {

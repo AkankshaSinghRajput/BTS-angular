@@ -2,6 +2,9 @@ import { PRIORITY } from './PRIORITY';
 import { TYPE } from './TYPE';
 import { STATUS } from './STATUS';
 import { SEVERITY } from './SEVERITY';
+
+//initialize all variables to be used for storing data
+//create bug class
 export class Bug{
   name:string='';
   projectId:string='';

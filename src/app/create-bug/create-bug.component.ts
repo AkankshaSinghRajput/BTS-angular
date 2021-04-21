@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+//import bug and bugservice files
 import { Bug } from '../Bug';
 import { BugService } from '../bug.service';
 
@@ -7,7 +9,7 @@ import { BugService } from '../bug.service';
   templateUrl: './create-bug.component.html',
   styleUrls: ['./create-bug.component.css']
 })
-export class CreateBugComponent implements OnInit {
+export class CreateBugComponent implements OnInit { //controller
   title:string = 'Create Bug';
   bug:Bug=new Bug(); //model -stores all form data
   bugArray:Bug[]=[];
@@ -20,6 +22,9 @@ export class CreateBugComponent implements OnInit {
    valueChange1(value: number) {
     this.remainingText1 = 100 - value;
    }
+
+  //To add data in db
+  //validation for all entries
   saveBug(){
     const promise = this.bugService.saveBug(this.bug);
     promise.subscribe(response=> {
@@ -29,9 +34,8 @@ export class CreateBugComponent implements OnInit {
     },
     error=> {
       console.log(error);
-      alert('error happenned..')
+      alert('error happenned..') //alert shown when there are empty fields
     })
-    // this.user.firstname = 'John';
   }
   ngOnInit(): void {
   }
