@@ -14,9 +14,10 @@ export class BugService {
     });
   }
 
-  updateBug(id: string) {
-    return this.http.post(URL+id, {
+  update(bug: Bug, id: string) {
+    return this.http.put(URL+id, bug, {
       headers: { "content-type": 'application/json' }
+
     });
   }
 
