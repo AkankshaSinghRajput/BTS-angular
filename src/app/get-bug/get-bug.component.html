@@ -71,7 +71,7 @@
               <td>{{bug1.projectId}}</td>
               <td>{{bug1.product}}</td>
               <td>{{bug1.eta |date:'M/d/yy'}}</td>
-              <td><button (click)='this.deleteBug(bug1.id, i)'>X</button></td>
+              <td><button style="background-color: red; color: white; width: 30px;" (click)='this.deleteBug(bug1.id, i)'>X</button></td>
             </tr>
           </tbody>
         </table>
