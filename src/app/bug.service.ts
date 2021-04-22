@@ -16,7 +16,7 @@ export class BugService {
     });
   }
    //service for update bug
-  update(bug: Bug, id: string) {
+  updateBug(bug: Bug, id: string) {
     return this.http.put(URL+id, bug, {
       headers: { "content-type": 'application/json' }
 
@@ -38,7 +38,7 @@ export class BugService {
       });
   }
 
-  delete(bugid:number  ){
+  delete(bugid:number){
     return this.http.delete(URL+bugid);
   }
 

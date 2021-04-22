@@ -6,11 +6,9 @@
 .navbar-style
 {
   background-color: grey;
-
   height:auto;
   width: auto;
   font-size:20px;
-
   box-shadow: 0 5px 10px black;
 
 }
@@ -29,7 +27,6 @@ li a{
 .para1
 {
   font-size: 30px;
-
   color : darkorange;
   font-family: Arial, Helvetica, sans-serif;
 
@@ -58,5 +55,19 @@ li a{
   border-collapse: collapse;
 }
 .btn-first:hover {
-  background-color: yellow;
+  background-color: rgba(94, 255, 0, 0.801);
+}
+
+.button{
+  border-radius: 20px;
+  background-color: darkorange;
+  color: black;
+  width: auto;
+  padding: 5px;
+  color: black;
+  font-size: 20px;
+  border-collapse: collapse;
+}
+.button:hover {
+  background-color: rgba(94, 255, 0, 0.801);
 }

@@ -1,33 +1,57 @@
 import { Component, OnInit } from '@angular/core';
 import { Bug } from '../Bug';
 import { BugService } from '../bug.service';
+
 @Component({
   selector: 'app-update-bug',
   templateUrl: './update-bug.component.html',
   styleUrls: ['./update-bug.component.css']
 })
 export class UpdateBugComponent implements OnInit { //controller
-  title:string = 'Create Bug';
+  title:string = 'updateBug';
+
   bug:Bug=new Bug(); //model -stores all form data
-  bugArray:Bug[]=[];
+  bugArray:any;
+  bugResult:any;
+  name:String="";
   constructor(private bugService:BugService) { }
-
-  //update the data in database with service class
-  //validation
   updateBug()
-  {const promise = this.bugService.update(this.bug,this.bug.id);
-    promise.subscribe(response=> {
-      console.log(response);
-      alert('Bug added..')
+{const promise = this.bugService.updateBug(this.bug,this.bug.id);
 
+  promise.subscribe((response: any)=> {
+    console.log(response);
+    alert('Bug updated..')
+
+  },
+  error=> {
+    console.log(error);
+    alert('error happenned..')
+  })
+
+
+}
+
+getBug() {
+  const bugName = this.name.trim();
+  if (bugName) {
+    const promise = this.bugService.getBug(bugName);
+    promise.subscribe(response => {
+      this.bugResult = response;
+      console.log(this.bugResult);
+      if(this.bugResult){
+          this.bug=this.bugResult;
+        }
+      else{
+        alert("Bug Name not in records");
+      }
     },
-    error=> {
-      console.log(error);
-      alert('error happenned..')
-    })
-
-
+      error => {
+        console.log(error);
+        alert('error happened..')
+      })
   }
+}
+
   ngOnInit(): void {
   }
 
