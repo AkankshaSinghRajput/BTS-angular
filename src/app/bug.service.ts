@@ -38,6 +38,10 @@ export class BugService {
       });
   }
 
+  delete(bugid:number  ){
+    return this.http.delete(URL+bugid);
+  }
+
   //service for get bug by status
     getBugbyStatus(status:any){
       return this.http.get(URL+'status/'+ status, {
